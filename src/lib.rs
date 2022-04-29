@@ -135,6 +135,7 @@ extern crate clapme;
 extern crate core;
 extern crate num_traits;
 pub extern crate typenum;
+//use qd::{Quad, qd};
 
 // Macro debugging
 // #![feature(trace_macros)]
@@ -197,6 +198,7 @@ pub mod conversion;
 pub mod dimensions;
 pub mod f32prefixes;
 pub mod f64prefixes;
+pub mod quadprefixes;
 pub mod traits;
 
 pub use crate::traits::*;
@@ -206,4 +208,5 @@ pub use crate::unit_systems::{cgs, fps, mks, si, ucum};
 #[doc(hidden)]
 pub mod dimcore {
     pub use core::{default, f32, f64, fmt, iter, marker, mem, ops};
+    pub use qd::{Quad, qd};
 }

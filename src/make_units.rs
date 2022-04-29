@@ -174,6 +174,7 @@ In addition to creating a type, type aliases, and constants, this macro implemen
 your unit system, including (but not limited to) the traits in the `traits` module and arithmetic operations.
 */
 
+
 #[macro_export]
 macro_rules! make_units {
     ($System:ident;
@@ -383,6 +384,7 @@ macro_rules! make_units {
         }
         define_consts!(f32consts, f32prefixes, f32);
         define_consts!(f64consts, f64prefixes, f64);
+        //define_consts!(quadconsts, quadprefixes, Quad);
 
         macro_rules! define_int_consts {
             ($module:ident, $t:ident) => (
@@ -651,7 +653,7 @@ macro_rules! __make_units_internal {
     (@ops $System:ident, $Unitless:ident) => (
         // -------------------------------------------------------------------------------
         // Unary: Neg, Not
-
+use qd::Quad;
         macro_rules! unary_op {
             ($Trait:ident, $fun:ident) => (
                 impl<V, U> $Trait for $System<V, U> where
@@ -1005,6 +1007,7 @@ macro_rules! __make_units_internal {
 
         prim!(f32);
         prim!(f64);
+        prim!(Quad);
 
         prim!(i8);
         prim!(i16);

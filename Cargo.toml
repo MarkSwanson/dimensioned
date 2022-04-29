@@ -40,3 +40,8 @@ Never again should you need to specify units in a comment!"""
   serde_test = { version = "1.0.0", optional = true }
   rand = { version = "0.6.5", optional = true }
   typenum = "1.6.0"
+  lazy_static = "*"
+  qd = { version = "0.2.0-alpha", path = "/home/mswanson/src/github/qd/" }
+  #qd = { version = "0.2.0-alpha", git = "https://github.com/MarkSwanson/qd", branch = "num_traits"}
+
+
